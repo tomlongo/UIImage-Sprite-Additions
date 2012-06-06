@@ -39,6 +39,7 @@
 
     if (!image || CGSizeEqualToSize(size, CGSizeZero) || range.length == 0) return nil;
     NSLog(@"%i %i", range.location, range.length);
+    size = CGSizeMake( (size.width * image.scale), (size.height * image.scale) ); //adjust size based on image scale
     CGImageRef spriteSheet = [image CGImage];
     NSMutableArray *tempArray = [[[NSMutableArray alloc] init] autorelease];
     
